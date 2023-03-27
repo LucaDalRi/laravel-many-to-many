@@ -58,6 +58,16 @@
                                         <i class="fa-solid fa-list-ul fa-lg fa-fw"></i> Progetti
                                     </a>
                                 </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.categories.index' ? 'bg-secondary' : '' }}" href="{{route('admin.categories.index')}}">
+                                        <i class="fa-solid fa-tags fa-lg fa-fw"></i> Categorie
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.technologies.index' ? 'bg-secondary' : '' }}" href="{{route('admin.technologies.index')}}">
+                                        <i class="fa-solid fa-code fa-lg fa-fw"></i> Tecnologie
+                                    </a>
+                                </li>
                             </ul>
 
 
