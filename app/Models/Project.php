@@ -13,7 +13,8 @@ class Project extends Model
         'title',
         'description',
         'slug',
-        'image'
+        'image',
+        'category_id'
     ];
 
     public function category() {

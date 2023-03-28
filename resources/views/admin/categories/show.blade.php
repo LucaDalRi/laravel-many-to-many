@@ -5,27 +5,17 @@
     <div class="row justify-content-center">
         <div class="col">
             <h1>
-                {{ $project->title }}
+                {{ $category->name }}
             </h1>
 
             <h4>
-                Slug: {{ $project->slug }}
+                Slug: {{ $category->slug }}
             </h4>
 
             <h4>
-                Descrizione: {{ $project->description }}
-            </h4>
-
-            <h4>
-                Categoria: {{ $project->category }}
+                Categoria: {{ $category->name }}
             </h4>
             
-            @if ($project->image)
-            <div>
-                <img src="{{ asset('storage/'.$project->image) }}" alt="">
-            </div>
-            @endif
-
             <a href="route('admin.projects.create')" class="btn btn-success">
                 Aggiungi progetto
             </a>

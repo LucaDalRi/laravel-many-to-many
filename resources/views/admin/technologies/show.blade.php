@@ -4,27 +4,18 @@
 <div class="container-fluid mt-4">
     <div class="row justify-content-center">
         <div class="col">
+            
             <h1>
-                {{ $project->title }}
+                {{ $technology->name }}
             </h1>
 
             <h4>
-                Slug: {{ $project->slug }}
+                Tecnologia: {{ $technology->name }}
             </h4>
 
             <h4>
-                Descrizione: {{ $project->description }}
+                Slug: {{ $technology->slug }}
             </h4>
-
-            <h4>
-                Categoria: {{ $project->category }}
-            </h4>
-            
-            @if ($project->image)
-            <div>
-                <img src="{{ asset('storage/'.$project->image) }}" alt="">
-            </div>
-            @endif
 
             <a href="route('admin.projects.create')" class="btn btn-success">
                 Aggiungi progetto

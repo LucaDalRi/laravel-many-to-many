@@ -17,7 +17,7 @@
             </h4>
 
             <h4>
-                Categoria: {{ $project->category }}
+                Categoria: {{ $category->name }}
             </h4>
             
             @if ($project->image)

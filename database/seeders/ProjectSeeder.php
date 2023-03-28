@@ -29,6 +29,7 @@ class ProjectSeeder extends Seeder
                 'title' => $title,
                 'description' => $faker->paragraph(),
                 'slug' => Str::slug($title),
+                'category_id' => $faker->randomDigit(1,7)
             ]);
         }
     }

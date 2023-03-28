@@ -22,6 +22,20 @@
                     <label for="image" class="form-label">Immagine</label>
                     <input class="form-control" type="file" id="image" name="image" accept="image/*">
                 </div>
+                <p>Categorie:</p>
+                <div class="btn-group my-3" role="group" aria-label="Basic checkbox toggle button group">
+                    @foreach ($categories as $category)    
+                    <input type="checkbox" class="btn-check" id="{{ 'btncheck'. $category->id }}" value="{{ $category->name }}">
+                    <label class="btn btn-outline-primary" for="{{ 'btncheck'. $category->id }}">{{ $category->name }}</label>
+                    @endforeach
+                </div>
+                <p>Tecnologie:</p>
+                <div class="btn-group d-block my-3" role="group" aria-label="Basic checkbox toggle button group">
+                    @foreach ($tecnologies as $tecnology)    
+                    <input type="checkbox" class="btn-check" id="{{ 'btncheck1'. $tecnology->id }}" value="{{ $tecnology->name }}">
+                    <label class="btn btn-outline-primary" for="{{ 'btncheck1'. $tecnology->id }}">{{ $tecnology->name }}</label>
+                    @endforeach
+                </div>
                 <p class="text-warning">
                     Lo slug verrà create automaticamente
                 </p>

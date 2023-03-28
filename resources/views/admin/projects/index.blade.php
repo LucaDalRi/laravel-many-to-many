@@ -20,6 +20,7 @@
                 <th scope="col">ID</th>
                 <th scope="col">Titolo</th>
                 <th scope="col">Slug</th>
+                <th scope="col">Categoria</th>
                 <th scope="col">Azioni</th>
               </tr>
             </thead>
@@ -29,6 +30,7 @@
                 <th scope="row">{{ $project->id }}</th>
                 <td>{{ $project->title }}</td>
                 <td>{{ $project->slug }}</td>
+                <td>{{ $categories[$project->category_id]->name }}</td>
                 <td>
                   <a href="{{ route('admin.projects.show', $project->id) }}" class="btn btn-primary">Dettagli</a>
                   <a href="{{ route('admin.projects.edit', $project->id) }}" class="btn btn-warning">Aggiorna</a>

@@ -7,8 +7,7 @@ use App\Models\Project;
 use App\Models\Category;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
-
-
+use App\Models\Technology;
 use Faker\Generator as Faker;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -23,9 +22,10 @@ class ProjectController extends Controller
     public function index()
     {
         $projects = Project::all();
+
+        $categories = Category::all();
         
-        
-        return view('admin.projects.index', compact('projects'));
+        return view('admin.projects.index', compact('projects', 'categories'));
     }
 
     /**
@@ -35,7 +35,9 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        return view('admin.projects.create');
+        $categories = Category::all();
+        $tecnologies = Technology::all();
+        return view('admin.projects.create', compact('categories' , 'tecnologies'));
     }
 
     /**
@@ -49,6 +51,7 @@ class ProjectController extends Controller
         $request->validate([
             'title' => 'required|max:100|min:3',
             'description' => 'required|min:5|max:4096',
+            'image' => 'nullable'
         ]);
 
         $data = $request->all();
@@ -78,7 +81,8 @@ class ProjectController extends Controller
      */
     public function show(Project $project)
     {
-        return view('admin.projects.show', compact('project'));
+        $category = $project->category;
+        return view('admin.projects.show', compact('project', 'category'));
     }
 
     /**
